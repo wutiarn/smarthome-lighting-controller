@@ -8,7 +8,7 @@ import java.time.ZoneId
 @ConstructorBinding
 data class ScheduledTasksProperties(
     val tasks: List<Task>,
-    val timezone: String
+    val timezone: ZoneId
 ) {
     data class Task(
         val cron: String,

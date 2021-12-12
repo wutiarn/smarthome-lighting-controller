@@ -16,11 +16,10 @@ class ScheduledTaskExecutionService(
 
     @PostConstruct
     fun configureTasks() {
-        val timezone = properties.timezone.let { ZoneId.of(it) }
         properties.tasks.forEach { task ->
             taskScheduler.schedule(
                 { executeTask(task) },
-                CronTrigger(task.cron, timezone)
+                CronTrigger(task.cron, properties.timezone)
             )
         }
     }
