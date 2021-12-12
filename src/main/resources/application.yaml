@@ -3,5 +3,5 @@ ru:
     snarthome:
       lighting:
         scheduled:
-          tasks: []
           timezone: Europe/Moscow
+          tasks: []

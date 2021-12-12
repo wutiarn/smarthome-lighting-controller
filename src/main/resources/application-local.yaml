@@ -1,0 +1,11 @@
+ru:
+  wtrn:
+    snarthome:
+      lighting:
+        scheduled:
+          tasks:
+            - cron: "0 25 23 * * *"
+              device: corridor_light_bulb
+              state:
+                brightness: 255
+                transition: 3

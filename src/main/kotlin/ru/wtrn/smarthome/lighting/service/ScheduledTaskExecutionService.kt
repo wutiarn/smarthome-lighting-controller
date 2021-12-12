@@ -1,10 +1,10 @@
 package ru.wtrn.smarthome.lighting.service
 
+import mu.KotlinLogging
 import org.springframework.scheduling.TaskScheduler
 import org.springframework.scheduling.support.CronTrigger
 import org.springframework.stereotype.Service
 import ru.wtrn.smarthome.lighting.configuration.properties.ScheduledTasksProperties
-import java.time.ZoneId
 import javax.annotation.PostConstruct
 
 @Service
@@ -13,6 +13,8 @@ class ScheduledTaskExecutionService(
     private val properties: ScheduledTasksProperties,
     private val taskScheduler: TaskScheduler
 ) {
+
+    private val logger = KotlinLogging.logger {}
 
     @PostConstruct
     fun configureTasks() {
@@ -25,6 +27,7 @@ class ScheduledTaskExecutionService(
     }
 
     fun executeTask(task: ScheduledTasksProperties.Task) {
+        logger.info { "Executing task: $task" }
         zigbeeDeviceConfigurer.changeDeviceState(task.device, task.state)
     }
 }
