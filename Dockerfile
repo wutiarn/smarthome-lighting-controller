@@ -9,5 +9,6 @@ COPY . .
 RUN ./gradlew clean build --console=plain --info
 
 FROM eclipse-temurin:17
+WORKDIR /app
 COPY --from=0 /app/build/libs/*.jar app.jar
 CMD java -Xms64m -Xmx512m -jar app.jar
