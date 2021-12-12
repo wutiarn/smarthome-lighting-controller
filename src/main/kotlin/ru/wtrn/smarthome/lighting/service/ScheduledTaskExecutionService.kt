@@ -19,6 +19,7 @@ class ScheduledTaskExecutionService(
     @PostConstruct
     fun configureTasks() {
         properties.tasks.forEach { task ->
+            logger.info { "Registering task: $task" }
             taskScheduler.schedule(
                 { executeTask(task) },
                 CronTrigger(task.cron, properties.timezone)
