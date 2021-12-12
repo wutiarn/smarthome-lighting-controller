@@ -4,18 +4,18 @@ ru:
       lighting:
         scheduled:
           tasks:
-            - cron: "0 35 23 * * *"
+            - cron: "0 30 23 * * *"
               device: corridor_light_bulb
               state:
                 color_temp: 500
                 brightness: 1
-            - cron: "1 35 23 * * *"
+            - cron: "1 30 23 * * *"
               device: corridor_light_bulb
               state:
                 brightness: 255
-                transition: 60
-            - cron: "0 36 23 * * *"
+                transition: 240
+            - cron: "0 35 23 * * *"
               device: corridor_light_bulb
               state:
                 color_temp: 250
-                transition: 60
+                transition: 240
