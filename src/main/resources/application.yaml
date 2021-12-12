@@ -1,0 +1,7 @@
+ru:
+  wtrn:
+    snarthome:
+      lighting:
+        scheduled:
+          tasks: []
+          timezone: Europe/Moscow
